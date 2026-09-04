@@ -1,0 +1,866 @@
+
+:root {
+    --primary: #0f766e;
+    --primary-dark: #064e3b;
+    --secondary: #f59e0b;
+    --dark: #102a43;
+    --light: #f7fafc;
+    --white: #ffffff;
+    --gray: #64748b;
+    --border: #e2e8f0;
+}
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+
+/* ================= NAVBAR ================= */
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.navbar {
+    width: 100%;
+    min-height: 70px;
+    padding: 15px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--dark);
+}
+
+
+.logo {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.logo span,
+footer span {
+    color: var(--secondary);
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--secondary);
+}
+
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* ================= HOME ================= */
+
+.home {
+    min-height: 90vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    color: var(--white);
+
+    background-image:
+        linear-gradient(
+            rgba(6, 78, 59, 0.72),
+            rgba(15, 42, 67, 0.82)
+        ),
+        url("world.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.home-content {
+    position: relative;
+    max-width: 700px;
+}
+
+
+.welcome {
+    color: var(--secondary);
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+
+.home h1 {
+    font-size: clamp(45px, 7vw, 80px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+
+.home-text {
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+
+.home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.primary-btn {
+    background: var(--secondary);
+    color: var(--dark);
+}
+
+
+.secondary-btn {
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    transform: translateY(-4px);
+}
+
+
+/* ================= GENERAL SECTIONS ================= */
+
+section {
+    padding: 80px 8%;
+}
+
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+.section-tag {
+    color: var(--primary);
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+
+.section-heading h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+
+.section-heading p {
+    color: var(--gray);
+}
+
+
+/* ================= DESTINATIONS ================= */
+
+.destinations {
+    background: var(--white);
+}
+
+
+.travel-tools {
+    max-width: 900px;
+    margin: 0 auto 35px;
+    display: flex;
+    gap: 15px;
+}
+
+
+.travel-tools input,
+.travel-tools select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+
+.travel-tools input:focus,
+.travel-tools select:focus {
+    border-color: var(--primary);
+}
+
+
+.destination-container {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+
+.destination-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background: var(--white);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+
+.destination-card:hover {
+    transform: translateY(-8px);
+}
+
+
+.destination-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.card-content {
+    padding: 20px;
+}
+
+
+.card-content h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+
+.card-content p {
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.card-description {
+    color: var(--gray);
+    font-size: 15px;
+}
+
+
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: var(--white);
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.favorite-btn.active {
+    color: #e11d48;
+}
+
+
+/* ================= FAVORITES ================= */
+
+.favorites-section {
+    background: #f1f5f9;
+}
+
+
+.favorites-list {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.favorite-item {
+    background: var(--white);
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+.empty-favorites {
+    color: var(--gray);
+}
+
+
+/* ================= QUIZ ================= */
+
+.quiz-section {
+    background: var(--white);
+}
+
+
+.quiz-box {
+    max-width: 700px;
+    margin: auto;
+    background: var(--light);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+.quiz-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+
+#question {
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+
+
+#answer-buttons {
+    display: grid;
+    gap: 12px;
+}
+
+
+#answer-buttons button {
+    width: 100%;
+    padding: 14px;
+    text-align: left;
+    border: 1px solid var(--border);
+    background: var(--white);
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+#answer-buttons button:hover:not(:disabled) {
+    border-color: var(--primary);
+    background: #ecfdf5;
+}
+
+
+#answer-buttons button:disabled {
+    cursor: not-allowed;
+}
+
+
+.correct {
+    background: #bbf7d0 !important;
+    border-color: #16a34a !important;
+}
+
+
+.wrong {
+    background: #fecaca !important;
+    border-color: #dc2626 !important;
+}
+
+
+.quiz-next {
+    display: none;
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+#quiz-result {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* ================= WEATHER ================= */
+
+.weather-section {
+    background: #ecfeff;
+}
+
+
+.weather-box {
+    max-width: 650px;
+    margin: auto;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+.weather-search {
+    display: flex;
+    gap: 10px;
+}
+
+
+.weather-search input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+}
+
+
+.weather-search button {
+    border: none;
+    padding: 14px 20px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.weather-result {
+    text-align: center;
+    padding-top: 25px;
+}
+
+
+#cityName {
+    font-size: 23px;
+}
+
+
+#temperature {
+    font-size: 35px;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 10px 0;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    background: var(--white);
+}
+
+
+.about-text h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+
+.about-text p {
+    margin-bottom: 15px;
+    color: var(--gray);
+}
+
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+
+.feature-card {
+    text-align: center;
+    padding: 20px 10px;
+    background: var(--light);
+    border-radius: 12px;
+}
+
+
+.feature-card span {
+    font-size: 35px;
+}
+
+
+.feature-card h3 {
+    margin: 10px 0;
+}
+
+
+.feature-card p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-section {
+    background: #f8fafc;
+}
+
+
+.contact-form {
+    max-width: 650px;
+    margin: auto;
+    background: var(--white);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+
+.form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+}
+
+
+.error {
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.submit-btn:hover {
+    background: var(--primary-dark);
+}
+
+
+#successMessage {
+    color: #16a34a;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: var(--dark);
+    color: var(--white);
+    padding: 50px 8% 15px;
+}
+
+
+.footer-container {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+    gap: 35px;
+}
+
+
+.footer-about h2,
+.footer-links h3,
+.footer-destinations h3,
+.newsletter h3 {
+    margin-bottom: 15px;
+}
+
+
+.footer-about p,
+.footer-destinations p,
+.newsletter p {
+    color: #cbd5e1;
+    margin-bottom: 8px;
+}
+
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+
+.footer-links a:hover {
+    color: var(--secondary);
+}
+
+
+.newsletter-box {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+
+.newsletter-box input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+}
+
+
+.newsletter-box button {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    background: var(--secondary);
+    color: var(--dark);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#newsletterMessage {
+    color: #86efac;
+    margin-top: 10px;
+}
+
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #334155;
+    margin-top: 35px;
+    padding-top: 15px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+
+/* ================= RESPONSIVE TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+
+
+    .home {
+        min-height: 80vh;
+    }
+
+}
+
+
+/* ================= RESPONSIVE MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 60px 5%;
+    }
+
+
+    .navbar {
+        padding: 15px 5%;
+        position: relative;
+    }
+
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 20px;
+        gap: 18px;
+    }
+
+
+    .nav-links.show {
+        display: flex;
+    }
+
+
+    .home {
+        padding: 80px 7%;
+        min-height: 75vh;
+    }
+
+
+    .home h1 {
+        font-size: 48px;
+    }
+
+
+    .home-text {
+        font-size: 16px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+
+    .travel-tools {
+        flex-direction: column;
+    }
+
+
+    .weather-search {
+        flex-direction: column;
+    }
+
+
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+
+
+    .quiz-box,
+    .contact-form,
+    .weather-box {
+        padding: 22px;
+    }
+
+
+    .newsletter-box {
+        flex-direction: column;
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 450px) {
+
+    .home h1 {
+        font-size: 40px;
+    }
+
+
+    .home-buttons {
+        flex-direction: column;
+    }
+
+
+    .btn {
+        text-align: center;
+    }
+
+
+    .quiz-progress {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+}
